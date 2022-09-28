@@ -20,6 +20,7 @@
 -Investigacion de todos los tipos de comunicacion en angular: Padre-Hijo, Hijo-Padre y Hermanos.
 -Se hizo la comunicacion entre Hermanos: Altas y Tabla. 
 -Se hizo la comunicacion Hijo-Padre: Altas y AppComponent, Paginacion y Tabla.
+-Estudio del uso de Interfaces.
 -Se hizo la comunicacion Padre Hijo: AppComponent y Tabla, Tabla y Paginacion.
 -Se resolvio el problema de no tener actualizada la tabla cada que se guardara usando Servicios y teniendo un Observable cada que se realizara un cambio.
 # Semana 4 (26/09/22 - 02/10/2022) 80 horas
