@@ -3,7 +3,11 @@
     <blockquote>
         <table class="tabla" id="personas" border="2">
             <tr>
-                <th><input type="checkbox" id="lista-check-box" class="check-lista"></th>
+                <th><input class="check-lista"
+                    type="checkbox" 
+                    [(ngModel)] = "parentSelector"
+                    [value]="-1"
+                    (change)="cambio_check($event)"></th>
                 <th>ID</th>
                 <th>NOMBRE(S)</th>
                 <th>APELLIDOS</th>
@@ -11,8 +15,15 @@
                 <th>CORREO</th>
                 <th>BORRAR</th>
             </tr>
-            <tr *ngFor="let persona of arreglo_5_usuarios; index as i">
-                <th><input type="checkbox" id="lista-check-box" class="check-lista"></th>
+            <tr *ngFor="let persona of arreglo_5_usuarios">
+                <th><input 
+                    class="check-lista"
+                    type="checkbox" 
+                    id="lista-check-box" 
+                    [value]="persona.id"
+                    [checked]="persona.permitir"
+                    (change)="cambio_check($event)">
+                </th>
                 <th class="letra">{{persona.id}}</th>
                 <th class="letra">{{persona.nombre}}</th>
                 <th class="letra">{{persona.apellido}}</th>
