@@ -30,8 +30,12 @@
                 <th class="letra">{{persona.edad}}</th>
                 <th class="letra">{{persona.correo}}</th>
                 <th>
-                    <input type="checkbox" id="lista-check-box" class="delate" onclick="palimitas(i)">
-                    <label class="label_dinamico">X</label>
+                    <button
+                    class="delate"
+                    type="button"  
+                    (click)="borrar(persona)">
+                    X
+                    </button>
                     <app-modal-eliminar></app-modal-eliminar>
                 </th>
             </tr>
@@ -39,6 +43,6 @@
         <app-paginacion [arreglo_personas]="personas" (arreglo_5_usuarios_)="usuarios($event)"></app-paginacion>
     </blockquote>
     <button id="imprimir_checkbox" class="boton_especial">IMPRIMIR LISTA</button>
-    <app-modal-mostrar></app-modal-mostrar>
+    <app-modal-mostrar [mostrar_personas]="personas"></app-modal-mostrar>
 </aside>
 <br>

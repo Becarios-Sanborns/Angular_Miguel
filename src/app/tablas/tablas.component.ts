@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, Input} from '@angular/core';
+import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
 
 @Component({
@@ -7,23 +7,36 @@ import { Persona } from '../altas/altas.component';
   templateUrl: './tablas.component.html',
   styleUrls: ['./tablas.component.css']
 })
-export class TablasComponent implements OnChanges{
+export class TablasComponent{
   @Input() personas: Persona[] = [];
   arreglo_5_usuarios: Persona[] = [];
   parentSelector: boolean = false;
+
   constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("si_tablas")
-  }
+  private enviar_arreglo_ = new Subject<any>();
+
+  enviar_arreglo_observable_ = this.enviar_arreglo_.asObservable();
 
   palomita = false;
-  palomitas(valor: number)
+  borrar(persona: any)
   {
-    this.palomita = this.personas[valor].permitir;
-    this.personas[valor].permitir = !this.palomita;
-    console.log("palomitas:")
-    console.log(this.personas);
-    console.log("---------")
+    console.log(persona.id + " j");
+    var cont = 0;
+    this.personas.map((d) =>
+    {
+      if(persona.id == d.id)
+      {
+        console.log(d);
+        this.personas.splice(cont, 1);
+        this.enviar_arreglo_.next(this.personas);
+      }
+      cont++;
+      if(cont > 1)
+      {
+
+      }
+      return d;
+    });
   }
   usuarios(e: Persona[])
   {
@@ -46,7 +59,7 @@ export class TablasComponent implements OnChanges{
         if(d.permitir == true)
         {
           this.checks_total++;
-      
+
           if(this.checks_total == this.personas.length)
           {
             this.parentSelector = true;

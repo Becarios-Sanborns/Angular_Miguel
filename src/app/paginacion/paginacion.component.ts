@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
+import { TablasComponent } from '../tablas/tablas.component';
 
 @Component({
   selector: 'app-paginacion',
@@ -14,13 +14,22 @@ export class PaginacionComponent implements OnInit{
   @Output()
   arreglo_5_usuarios_: EventEmitter<Persona[]> = new EventEmitter<Persona[]>();
 
-  constructor(private comunicacion: AppComponent) { }
+  constructor(private comunicacion: AppComponent, private comunicacion2: TablasComponent) { }
+
   ngOnInit(): void {
     this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{
       this.arreglo_personas = personas;
-      console.log("---------")
-      console.log(this.arreglo_personas);
-      console.log("---------")
+      this.botonestabla(this.posicion_tabla_principal);
+    })
+    this.comunicacion2.enviar_arreglo_observable_.subscribe(personas =>{
+      var cont = 0;
+      personas = personas.map((d: any) =>
+      {
+        cont++;
+        d.id = cont;
+        return d;
+      });
+      this.arreglo_personas = personas;
       this.botonestabla(this.posicion_tabla_principal);
     })
   }
