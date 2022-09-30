@@ -26,3 +26,4 @@
 # Semana 4 (26/09/22 - 02/10/2022) 80 horas
 #1 Se hicieron mejoras al proyecto, como checar la correcta validacon a los campos y eliminacion de codigo ineccesario.
 #2 Se analizo como conservar las palomitas de los checks sin usar el document.getElement.
+#3 Se implemento la conservacion de palomitas de los checks en la tabla al igual que la funcion del check padre.
