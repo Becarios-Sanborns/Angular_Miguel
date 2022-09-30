@@ -24,6 +24,7 @@
 -Se hizo la comunicacion Padre Hijo: AppComponent y Tabla, Tabla y Paginacion.
 -Se resolvio el problema de no tener actualizada la tabla cada que se guardara usando Servicios y teniendo un Observable cada que se realizara un cambio.
 # Semana 4 (26/09/22 - 02/10/2022) 80 horas
-#1 Se hicieron mejoras al proyecto, como checar la correcta validacon a los campos y eliminacion de codigo ineccesario.
-#2 Se analizo como conservar las palomitas de los checks sin usar el document.getElement.
-#3 Se implemento la conservacion de palomitas de los checks en la tabla al igual que la funcion del check padre.
+#1 Revision del proyecto, se hicieron mejoras al proyecto, como checar la correcta validacon a los campos, la correcta comunicacion entre componentes y eliminacion de codigo ineccesario.
+#2 Reunion y Organizacion del plan de trabajo durante el Servicio, Uso de Github y Calendario de Google. Analisis del problema que tengo al subir los repositorios o actualizarlos en github.
+#3 Se analizo como conservar las palomitas de los checks sin usar el document.getElement. Se hizo un estudio por medio de videos sobre el manejo de checks.
+#4 Se implemento la conservacion de palomitas de los checks en la tabla al igual que la funcion del check padre.
