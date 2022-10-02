@@ -10,13 +10,14 @@
 # Semana 2 (12/09/22 - 18/09/2022) 40 horas
 -Creación de componentes a mi gusto con su respectivo HTML y CSS.
 -Comunicación Padre-Hijo: Altas-Tabla.
--Estudie los ciclos de vida.
+-Estudio de los ciclos de vida en Angular.
 -Interpolación con la directiva NgFor para mostrar datos y uso del FormControl para guardarlos.
 -Reinicio del proyecto basándose en un diagrama tipo árbol.
 -Creación de componentes con sus respectivos HTML y CSS.
 # Semana 3 (19/09/22 - 25/09/2022) 60 horas
 -Comunicación entre Hermanos: Altas y Tabla. 
 -Comunicación Hijo-Padre: Altas y AppComponent, Paginación y Tabla.
+-Repaso de todo lo visto hasta ahora.
 -Uso de las Interfaces.
 -Comunicación Padre Hijo: AppComponent y Tabla, Tabla y Paginación.
 -Paginación en la tabla con límite de 5.
