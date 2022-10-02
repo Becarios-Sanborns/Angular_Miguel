@@ -17,11 +17,11 @@
 # Semana 3 (19/09/22 - 25/09/2022) 60 horas
 -Comunicación entre Hermanos: Altas y Tabla. 
 -Comunicación Hijo-Padre: Altas y AppComponent, Paginación y Tabla.
--Repaso de todo lo visto hasta ahora.
+-Repaso de todo lo visto.
 -Uso de las Interfaces.
 -Comunicación Padre Hijo: AppComponent y Tabla, Tabla y Paginación.
 -Paginación en la tabla con límite de 5.
--Actualización de la tabla cada al guardar una usando Servicios y Observables.
+-Actualización de la tabla al guardar una usando Servicios y Observables.
 # Semana 4 (26/09/22 - 02/10/2022) 80 horas
 #1 Validación de los campos y eliminación de código innecesario.
 #2 Reunión y Organización del plan de trabajo durante el Servicio, Uso de GitHub y Calendario de Google.
