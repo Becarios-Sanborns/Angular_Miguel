@@ -25,5 +25,5 @@
 #2 Reunión y Organización del plan de trabajo durante el Servicio, Uso de GitHub y Calendario de Google.
 #3 Estudio sobre el manejo de checks para conservar la selección
 #4 Se codifico la conservación de selección de los checks.
-#5 Eliminación de personas dependiendo el botón seleccionado. Estudio de NgStyle, Reunión para notar los avances y problemas del proyecto.
-#6 Análisis de código y fallas en el proceso de seleccionar y deseleccionar los checks y borrar personas de la tabla.
+#5 Eliminación de personas dependiendo el botón seleccionado. Estudio de NgStyle.
+#6 Análisis de código y fallas en los checks y eliminación en la tabla.
