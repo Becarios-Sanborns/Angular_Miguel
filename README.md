@@ -11,7 +11,7 @@
 -Creación de componentes a mi gusto con su respectivo HTML y CSS.
 -Comunicación Padre-Hijo: Altas-Tabla.
 -Estudie los ciclos de vida.
--Interpolación con la directiva NgFor y uso del FormControl para guardar.
+-Interpolación con la directiva NgFor para mostrar datos y uso del FormControl para guardarlos.
 -Reinicio del proyecto basándose en un diagrama tipo árbol.
 -Creación de componentes con sus respectivos HTML y CSS.
 # Semana 3 (19/09/22 - 25/09/2022) 60 horas
@@ -19,6 +19,7 @@
 -Comunicación Hijo-Padre: Altas y AppComponent, Paginación y Tabla.
 -Uso de las Interfaces.
 -Comunicación Padre Hijo: AppComponent y Tabla, Tabla y Paginación.
+-Paginación en la tabla con límite de 5.
 -Actualización de la tabla cada al guardar una usando Servicios y Observables.
 # Semana 4 (26/09/22 - 02/10/2022) 80 horas
 #1 Validación de los campos y eliminación de código innecesario.
