@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
+import { Component, Output, EventEmitter, OnInit} from '@angular/core';
 import { FormControl } from "@angular/forms";
+import { PaginacionComponent } from '../paginacion/paginacion.component';
 
 export interface Persona
 {
@@ -16,7 +17,8 @@ export interface Persona
   templateUrl: './altas.component.html',
   styleUrls: ['./altas.component.css']
 })
-export class AltasComponent implements OnChanges{
+export class AltasComponent implements OnInit{
+
   id: number = 0;
   nombre: string;
   padreForm: FormControl = new FormControl();
@@ -32,9 +34,8 @@ export class AltasComponent implements OnChanges{
   personas: Persona[] = [];
   @Output() 
   persona_: EventEmitter<Persona[]> = new EventEmitter<Persona[]>();
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("si_altas")
+  
+  ngOnInit(): void { 
   }
   guardar()
   {
@@ -52,19 +53,19 @@ export class AltasComponent implements OnChanges{
     var copia_correo: string = "";
     
     //Validar Campos
-    if(this.nombre == undefined || this.apellido == undefined  || this.correo == undefined)
+    if(this.nombre == undefined || this.apellido == undefined  || this.correo == undefined || this.edad == undefined)
     {
       alert("INGRESA LOS CAMPOS SOLICITADOS");
       console.log("Ingrese Los Campos");
       permitir_guardar = false;
     }
-    else if(this.nombre == null || this.apellido == null  || this.correo == null)
+    else if(this.nombre == null || this.apellido == null  || this.correo == null || this.edad == null)
     {
       alert("FALTAN CAMPOS POR RELLENAR");
       console.log("alert")
       permitir_guardar = false;
     }
-    else if(this.nombre.length == 0 || this.apellido.length == 0  || this.correo.length == 0)
+    else if(this.nombre.length == 0 || this.apellido.length == 0  || this.correo.length == 0 || this.edad == 0)
     {
       alert("FALTAN CAMPOS POR RELLENAR");
       permitir_guardar = false;

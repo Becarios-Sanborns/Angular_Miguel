@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-tablas',
@@ -12,7 +13,14 @@ export class TablasComponent{
   arreglo_5_usuarios: Persona[] = [];
   parentSelector: boolean = false;
 
-  constructor() { }
+  constructor(private comunicacion3: AppComponent) { }
+
+  ngOnInit(): void {
+    this.comunicacion3.enviar_arreglo_observable.subscribe(personas =>{
+      this.parentSelector = false;
+    })
+  }
+
   private enviar_arreglo_ = new Subject<any>();
 
   enviar_arreglo_observable_ = this.enviar_arreglo_.asObservable();
@@ -31,10 +39,6 @@ export class TablasComponent{
         this.enviar_arreglo_.next(this.personas);
       }
       cont++;
-      if(cont > 1)
-      {
-
-      }
       return d;
     });
   }
@@ -50,7 +54,7 @@ export class TablasComponent{
     this.checks_total = 0;
     if(id != -1)
     {
-      this.personas = this.personas.map((d) =>
+      this.personas.forEach((d) =>
       {
         if(d.id == id)
         {
@@ -70,16 +74,13 @@ export class TablasComponent{
           }
         }
         console.log("checks_palo: " + this.checks_total + "cant: " + this.personas.length)
-        return d;
       });
     }
     else if(id == -1)
     {
-      this.personas = this.personas.map((d) =>
-      {
-        d.permitir = this.parentSelector;
-        return d;
-      });
+      this.personas.forEach( (valor, indice) => {
+        valor.permitir = this.parentSelector;
+      })
     }
   }
 }

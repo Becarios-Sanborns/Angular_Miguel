@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
 import { TablasComponent } from '../tablas/tablas.component';
@@ -18,18 +19,26 @@ export class PaginacionComponent implements OnInit{
 
   ngOnInit(): void {
     this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{
+      var cont = 0;
+      personas.forEach((d: any) =>
+      {       
+        cont++
+        d.id = cont
+      });
       this.arreglo_personas = personas;
+      console.log("g");
+      console.log(this.arreglo_personas)
       this.botonestabla(this.posicion_tabla_principal);
     })
     this.comunicacion2.enviar_arreglo_observable_.subscribe(personas =>{
       var cont = 0;
-      personas = personas.map((d: any) =>
-      {
-        cont++;
-        d.id = cont;
-        return d;
+      personas.forEach((d: any) =>
+      {       
+        cont++
+        d.id = cont
       });
       this.arreglo_personas = personas;
+      var cont = 0;
       this.botonestabla(this.posicion_tabla_principal);
     })
   }
@@ -199,7 +208,6 @@ export class PaginacionComponent implements OnInit{
       }
     });
     this.arreglo_5_usuarios = arreglo_5_usuarios;
-
     this.arreglo_5_usuarios_.emit(arreglo_5_usuarios);
   }
 }
