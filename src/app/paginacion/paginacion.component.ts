@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
+import { BuscarComponent } from '../buscar/buscar.component';
 import { TablasComponent } from '../tablas/tablas.component';
 
 @Component({
@@ -26,8 +26,6 @@ export class PaginacionComponent implements OnInit{
         d.id = cont
       });
       this.arreglo_personas = personas;
-      console.log("g");
-      console.log(this.arreglo_personas)
       this.botonestabla(this.posicion_tabla_principal);
     })
     this.comunicacion2.enviar_arreglo_observable_.subscribe(personas =>{
@@ -41,8 +39,67 @@ export class PaginacionComponent implements OnInit{
       var cont = 0;
       this.botonestabla(this.posicion_tabla_principal);
     })
+    this.comunicacion.enviar_nombre_observable.subscribe(nombre =>{
+      this.nombre = nombre;
+      console.log("nombre")
+      console.log(nombre);
+      if(nombre.length > 0)
+      {
+        this.mostrar_tabla = "tabla2"; 
+        this.busqueda(this.nombre);
+      }
+      else
+      {
+        this.mostrar_tabla = "tabla1";
+        this.principio();
+        console.log("volver a tabla principal");
+      }
+    })
   }
 
+  busqueda(nombre: string)
+  {
+    this.arreglo_busqueda = [];
+    var arreglo_busqueda = this.arreglo_busqueda;
+    this.arreglo_personas.forEach(function (valor, indice) {
+      var buscar_iniciales = "";
+      var copia_nombre = "";
+      for(var i: number = 0; i < nombre.length; i++)
+      {
+        if(nombre[i] != " ")
+        {
+          copia_nombre = copia_nombre + nombre[i];
+        }
+      }
+      nombre = copia_nombre;
+      var tamaño_nombre_busqueda: number = nombre.length;
+      for(i = 0; i < tamaño_nombre_busqueda; i++)
+      {
+        if(valor.nombre[i] != " ")
+        {
+          buscar_iniciales = buscar_iniciales + valor.nombre[i];
+        }
+        else
+        {
+          tamaño_nombre_busqueda++;
+        }
+      }
+
+      nombre = nombre.toUpperCase().trim();
+      buscar_iniciales = buscar_iniciales.toUpperCase().trim();
+
+      if (nombre == buscar_iniciales) {
+        var estructura2 = {id: valor.id, nombre: valor.nombre, apellido: valor.apellido, edad: valor.edad, correo: valor.correo, permitir: valor.permitir};
+        arreglo_busqueda.push(estructura2);
+      }
+    });
+    console.log("--------------------")
+    console.log(arreglo_busqueda);
+    this.mostrar_tabla = "tabla2"; 
+    this.botonestabla(this.posicion_tabla_busqueda);
+  }
+  
+  nombre = "";
   arreglo_busqueda: any[] = [];
   cantidad: string = "TOTAL USUARIOS: 0";
   cantidad_total_usuarios: number = 0;
@@ -201,13 +258,29 @@ export class PaginacionComponent implements OnInit{
     var limite: number = 0;
     var arreglo_5_usuarios = this.arreglo_5_usuarios;
 
-    this.arreglo_personas.forEach(function (valor, indice) {
-      if (indice >= (posicion_tabla * limite_tabla) && limite < limite_tabla) {
-        arreglo_5_usuarios.push(valor);
-        limite++;
-      }
-    });
+    if(this.mostrar_tabla == "tabla1")
+    {
+      this.arreglo_personas.forEach(function (valor, indice) {
+        if (indice >= (posicion_tabla * limite_tabla) && limite < limite_tabla) {
+          arreglo_5_usuarios.push(valor);
+          limite++;
+        }
+      });
+    }
+    else
+    {
+      this.arreglo_busqueda.forEach(function (valor, indice) {
+        if (indice >= (posicion_tabla * limite_tabla) && limite < limite_tabla) {
+          arreglo_5_usuarios.push(valor);
+          limite++;
+        }
+      });
+    }
     this.arreglo_5_usuarios = arreglo_5_usuarios;
+    console.log("mostrar tabla")
+    console.log(this.mostrar_tabla);
+    console.log("usuarios");
+    console.log(arreglo_5_usuarios);
     this.arreglo_5_usuarios_.emit(arreglo_5_usuarios);
   }
 }

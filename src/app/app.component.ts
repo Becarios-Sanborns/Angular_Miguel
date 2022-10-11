@@ -14,9 +14,19 @@ export class AppComponent{
 
   enviar_arreglo_observable = this.enviar_arreglo.asObservable();
 
+  private enviar_nombre = new Subject<any>();
+
+  enviar_nombre_observable = this.enviar_nombre.asObservable();
+
+  nombre = "";
   padre(e: Persona[])
   {
     this.personas = e;
     this.enviar_arreglo.next(this.personas);
+  }
+  padre2(a: any)
+  {
+    this.nombre = a;
+    this.enviar_nombre.next(this.nombre);
   }
 }

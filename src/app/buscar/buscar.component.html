@@ -5,7 +5,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </aside>
         <br>
-        <input class="controls" type="text" id="nombre_" placeholder="INGRESA EL NOMBRE">
+        <input class="controls" type="text" id="nombre_" placeholder="INGRESA EL NOMBRE" (keyup)="onKeyUp()" [formControl]="padreForm">
         <br>
     </blockquote>
 </article>

@@ -13,10 +13,10 @@ export class TablasComponent{
   arreglo_5_usuarios: Persona[] = [];
   parentSelector: boolean = false;
 
-  constructor(private comunicacion3: AppComponent) { }
+  constructor(private comunicacion: AppComponent) { }
 
   ngOnInit(): void {
-    this.comunicacion3.enviar_arreglo_observable.subscribe(personas =>{
+    this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{
       this.parentSelector = false;
     })
   }
@@ -45,6 +45,8 @@ export class TablasComponent{
   usuarios(e: Persona[])
   {
     this.arreglo_5_usuarios = e;
+    console.log("5 usuarios");
+    console.log(this.arreglo_5_usuarios);
   }
   checks_total = 0;
   cambio_check($event: any)
