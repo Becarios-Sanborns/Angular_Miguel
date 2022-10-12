@@ -1,7 +1,7 @@
 .tabla2
 {
     font-size: 20px;
-    padding: 5px;
+    padding: 10px;
     display: inline-block;
 }
 .boton
@@ -18,13 +18,14 @@
 {
     position: fixed;
     transition: all 500ms ease;
-    opacity: 0;
+    left: 45%;
+    top: 10%;
     z-index: 1;
-    visibility: hidden;
 }
 .contenedor
 {
     background: #fff;
+
 }
 .contenedor header
 {
@@ -35,12 +36,14 @@
 .contenedor label
 {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: -15px;
     font-size: 20px;
+    padding: 10px;
     cursor: pointer;
+    background: #34EBE9;
 }
-.contenido p
+.contenido 
 {
     font-size: 20px;
     display: flex;
@@ -62,8 +65,6 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     transition: all 500ms ease;
-    opacity: 0; 
-    visibility: hidden;
 }
 .contenedor3
 {
@@ -73,4 +74,8 @@
     transition: all 500ms ease;
     position: relative;
     transform: translateY(-30%);
+}
+.letra
+{
+    font-weight:lighter;
 }

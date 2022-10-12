@@ -37,7 +37,16 @@ export class PaginacionComponent implements OnInit{
       });
       this.arreglo_personas = personas;
       var cont = 0;
-      this.botonestabla(this.posicion_tabla_principal);
+      if(this.mostrar_tabla == "tabla1")
+      {
+        this.botonestabla(this.posicion_tabla_principal);
+        console.log("cc22")
+      }
+      else
+      {
+        console.log("cc")
+        this.busqueda(this.nombre);
+      }
     })
     this.comunicacion.enviar_nombre_observable.subscribe(nombre =>{
       this.nombre = nombre;
@@ -47,10 +56,12 @@ export class PaginacionComponent implements OnInit{
       {
         this.mostrar_tabla = "tabla2"; 
         this.busqueda(this.nombre);
+        this.principio();
       }
       else
       {
         this.mostrar_tabla = "tabla1";
+        this.posicion_tabla_principal = 1;
         this.principio();
         console.log("volver a tabla principal");
       }

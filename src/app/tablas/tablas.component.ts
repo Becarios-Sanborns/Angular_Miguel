@@ -13,6 +13,7 @@ export class TablasComponent{
   arreglo_5_usuarios: Persona[] = [];
   parentSelector: boolean = false;
 
+  lista = false;
   constructor(private comunicacion: AppComponent) { }
 
   ngOnInit(): void {
@@ -49,11 +50,22 @@ export class TablasComponent{
     console.log(this.arreglo_5_usuarios);
   }
   checks_total = 0;
+  checks_sin_palomita = 0;
+  abrir_modal = 0;
+  modal_lista()
+  {
+    this.abrir_modal++;
+    if(this.abrir_modal == 3)
+    {
+      this.abrir_modal = 1;
+    }
+  }
   cambio_check($event: any)
   {
     const id = $event.target.value;
     const isChecked  = $event.target.checked;
     this.checks_total = 0;
+    this.checks_sin_palomita = 0;
     if(id != -1)
     {
       this.personas.forEach((d) =>
@@ -66,13 +78,24 @@ export class TablasComponent{
         {
           this.checks_total++;
 
+          this.lista = true;
+
           if(this.checks_total == this.personas.length)
           {
             this.parentSelector = true;
           }
-          if(this.checks_total <= this.personas.length - 1)
+          if(this.checks_total < this.personas.length)
           {
             this.parentSelector = false;
+          }
+        }
+        else
+        {
+          this.parentSelector = false;
+          this.checks_sin_palomita++;
+          if(this.checks_sin_palomita == this.personas.length)
+          {
+            this.lista = false;
           }
         }
         console.log("checks_palo: " + this.checks_total + "cant: " + this.personas.length)
@@ -80,6 +103,14 @@ export class TablasComponent{
     }
     else if(id == -1)
     {
+      if(this.parentSelector == true)
+      {
+        this.lista = true;
+      }
+      else
+      {
+        this.lista = false;
+      }
       this.personas.forEach( (valor, indice) => {
         valor.permitir = this.parentSelector;
       })

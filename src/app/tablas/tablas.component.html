@@ -42,7 +42,7 @@
         </table>
         <app-paginacion (arreglo_5_usuarios_)="usuarios($event)"></app-paginacion>
     </blockquote>
-    <button id="imprimir_checkbox" class="boton_especial">IMPRIMIR LISTA</button>
-    <app-modal-mostrar></app-modal-mostrar>
+    <button id="imprimir_checkbox" class="boton_especial" [ngStyle]="{'visibility': lista ? 'visible':'hidden'}" (click)="modal_lista()">IMPRIMIR LISTA</button>
+    <app-modal-mostrar [abrir_modal] = "abrir_modal" [personas] = "personas"></app-modal-mostrar>
 </aside>
 <br>
