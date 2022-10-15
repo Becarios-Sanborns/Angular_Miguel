@@ -32,3 +32,4 @@
 # Semana 5 (03/10/22 - 07/10/2022) 100 horas
 #7 Correccion de errores ya se puede borrar y conservar los checks seleccionados sin problemas.
 #8 Analisis en como poder buscar usuarios, se hizo la comunicacion entre el componente buscar y tabla por medio de servicios para enviar el nombre y asi comparar con toda la lista de usuarios. 
+#9 Instalacion de Angular en otra Laptop.
