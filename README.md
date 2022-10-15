@@ -29,3 +29,6 @@
 #4 Se codifico la conservación de selección de los checks.
 #5 Eliminación de personas dependiendo el botón seleccionado. Estudio de NgStyle.
 #6 Análisis de código y fallas en los checks y eliminación en la tabla.
+# Semana 5 (03/10/22 - 07/10/2022) 100 horas
+#7 Correccion de errores ya se puede borrar y conservar los checks seleccionados sin problemas.
+#8 Analisis en como poder buscar usuarios, se hizo la comunicacion entre el componente buscar y tabla por medio de servicios para enviar el nombre y asi comparar con toda la lista de usuarios. 
