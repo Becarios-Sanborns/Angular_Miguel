@@ -38,5 +38,4 @@
 #11 Reunion para checar los errores y avances del programa el cual se soluciono mi error para ver los usuarios en la tabla. Mejore el codigo para que no pueda haber error en la paginacion de la tabla al buscar.
 #12 Use el ngStyle para mostrar el boton cada vez que se seleccione por lo menos un check que despliega los modales al darle click al boton. Imprimir la lista de usuarios seleccionados en el modal de el componentes modal-mostrar.
 #13 Modificacion del modal para que el labbel X no este encimado del titulo. Pude abrir la ventana modal-eliminar cada vez que se pulsaba el boton X del usuario encontrado en la tabla pero esta se repetia varias veces segun sea el caso.
-#14
-14
+#14 Intentar resolver el error del de porque se abren varias ventanas modales de eliminar. En la reunion me dijeron como resolver el error que se encontraba en la tabla del componente y es que ahi se repite varias veces si esta dentro de un ngFor.
