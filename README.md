@@ -33,3 +33,10 @@
 #7 Correccion de errores ya se puede borrar y conservar los checks seleccionados sin problemas.
 #8 Analisis en como poder buscar usuarios, se hizo la comunicacion entre el componente buscar y tabla por medio de servicios para enviar el nombre y asi comparar con toda la lista de usuarios. 
 #9 Instalacion de Angular en otra Laptop.
+# Semana 6 (10/10/22 - 14/10/2022) 120 horas
+#10 Bsuqueda de usuarios para mostrar mostrar en la tabla las personas pertenecientes al grupo relacionado con la entrada de la caja de texto. Se tienen algunos problemas cuando se ingresan diferentes busquedas ya que la tabla aparece vacia pero si se incrementan las filas y aparece el id.
+#11 Reunion para checar los errores y avances del programa el cual se soluciono mi error para ver los usuarios en la tabla. Mejore el codigo para que no pueda haber error en la paginacion de la tabla al buscar.
+#12 Use el ngStyle para mostrar el boton cada vez que se seleccione por lo menos un check que despliega los modales al darle click al boton. Imprimir la lista de usuarios seleccionados en el modal de el componentes modal-mostrar.
+#13 Modificacion del modal para que el labbel X no este encimado del titulo. Pude abrir la ventana modal-eliminar cada vez que se pulsaba el boton X del usuario encontrado en la tabla pero esta se repetia varias veces segun sea el caso.
+#14
+14
