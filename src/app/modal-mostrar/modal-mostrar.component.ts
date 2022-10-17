@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
 
 @Component({
@@ -9,6 +10,7 @@ import { Persona } from '../altas/altas.component';
 export class ModalMostrarComponent implements OnChanges {
   @Input() abrir_modal: number;
   @Input() personas: Persona[] = [];
+
   abrir = false;
   constructor() { }
 

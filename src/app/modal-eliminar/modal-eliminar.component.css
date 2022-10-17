@@ -7,13 +7,13 @@
     background: #1A2849;
     padding: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
 .modal2
 {
     position: fixed;
-    opacity: 0;
+    left: 40%;
     z-index: 1;
-    visibility: hidden;
 }
 .contenedor2
 {
@@ -49,8 +49,6 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     transition: all 500ms ease;
-    opacity: 0; 
-    visibility: hidden;
 }
 .contenedor3
 {

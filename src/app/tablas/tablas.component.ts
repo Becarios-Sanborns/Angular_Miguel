@@ -26,28 +26,63 @@ export class TablasComponent{
 
   enviar_arreglo_observable_ = this.enviar_arreglo_.asObservable();
 
+  private abrir_eliminacion = new Subject<any>();
+
+  eliminacion_observable = this.abrir_eliminacion.asObservable();
+
   palomita = false;
+
+  aceptar_eliminacion = false;
+  enviar_eliminar = 0;
+  confirmar_eliminacion(eliminacion: boolean)
+  {
+    this.aceptar_eliminacion = eliminacion;
+    this.eliminar(this.persona_borrar);
+  }
+  persona_borrar = [];
   borrar(persona: any)
   {
-    console.log(persona.id + " j");
-    var cont = 0;
-    this.personas.map((d) =>
+    this.persona_borrar = persona;
+    this.abrir_eliminacion.next(this.enviar_eliminar);
+    this.enviar_eliminar++;
+  }
+  eliminar(persona: any)
+  {
+    if(this.aceptar_eliminacion == true)
     {
-      if(persona.id == d.id)
+      var cont = 0;
+      this.personas.forEach((d) =>
       {
-        console.log(d);
-        this.personas.splice(cont, 1);
-        this.enviar_arreglo_.next(this.personas);
-      }
-      cont++;
-      return d;
-    });
+        if(persona.id == d.id)
+        {
+          this.personas.splice(cont, 1);
+          this.enviar_arreglo_.next(this.personas);
+        }
+        cont++;
+        return d;
+      });
+    }
+  }
+  limpiar(limpiar_checks: String)
+  {
+    console.log("limpiar");
+    if(limpiar_checks == "tabla1")
+    {
+      this.personas.forEach((d) =>
+      {
+        d.permitir = false;
+        this.parentSelector = false;
+      });
+    }
+    this.lista = false;
+  }
+  cerrar(cerrar: String)
+  {
+    this.lista = false;
   }
   usuarios(e: Persona[])
   {
     this.arreglo_5_usuarios = e;
-    console.log("5 usuarios");
-    console.log(this.arreglo_5_usuarios);
   }
   checks_total = 0;
   checks_sin_palomita = 0;
@@ -57,7 +92,7 @@ export class TablasComponent{
     this.abrir_modal++;
     if(this.abrir_modal == 3)
     {
-      this.abrir_modal = 1;
+      this.abrir_modal = -1;
     }
   }
   cambio_check($event: any)
@@ -98,7 +133,6 @@ export class TablasComponent{
             this.lista = false;
           }
         }
-        console.log("checks_palo: " + this.checks_total + "cant: " + this.personas.length)
       });
     }
     else if(id == -1)

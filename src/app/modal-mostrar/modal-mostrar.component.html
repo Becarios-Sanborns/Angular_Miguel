@@ -4,6 +4,13 @@
         <label id="cerrar" (click)="cerrar()">X</label>
         <div class="contenido">
             <table class="tabla2" id="personas2" border="2">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE(S)</th>
+                    <th>APELLIDOS</th>
+                    <th>EDAD</th>
+                    <th>CORREO</th>
+                </tr>
                 <tr *ngFor="let persona of arreglo_lista">
                     <th class="letra">{{persona.id}}</th>
                     <th class="letra">{{persona.nombre}}</th>

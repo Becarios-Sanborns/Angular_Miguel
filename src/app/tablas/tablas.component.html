@@ -36,11 +36,11 @@
                     (click)="borrar(persona)">
                     X
                     </button>
-                    <app-modal-eliminar></app-modal-eliminar>
                 </th>
             </tr>
+            <app-modal-eliminar (eliminacion)="confirmar_eliminacion($event)"></app-modal-eliminar>
         </table>
-        <app-paginacion (arreglo_5_usuarios_)="usuarios($event)"></app-paginacion>
+        <app-paginacion (arreglo_5_usuarios_)="usuarios($event)" (limpiar_checkbox)="limpiar($event)" (cerrar_boton)="cerrar($event)"></app-paginacion>
     </blockquote>
     <button id="imprimir_checkbox" class="boton_especial" [ngStyle]="{'visibility': lista ? 'visible':'hidden'}" (click)="modal_lista()">IMPRIMIR LISTA</button>
     <app-modal-mostrar [abrir_modal] = "abrir_modal" [personas] = "personas"></app-modal-mostrar>

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
-import { BuscarComponent } from '../buscar/buscar.component';
 import { TablasComponent } from '../tablas/tablas.component';
 
 @Component({
@@ -14,8 +13,12 @@ export class PaginacionComponent implements OnInit{
   arreglo_5_usuarios: Persona[]= [];
   @Output()
   arreglo_5_usuarios_: EventEmitter<Persona[]> = new EventEmitter<Persona[]>();
+  @Output()
+  limpiar_checkbox: EventEmitter<String> = new EventEmitter<String>();
+  @Output()
+  cerrar_boton: EventEmitter<String> = new EventEmitter<String>();
 
-  constructor(private comunicacion: AppComponent, private comunicacion2: TablasComponent) { }
+  constructor(private comunicacion: AppComponent, private comunicacion2: TablasComponent, /*private comunicacion3: ModalMostrarComponent*/) { }
 
   ngOnInit(): void {
     this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{
@@ -26,6 +29,7 @@ export class PaginacionComponent implements OnInit{
         d.id = cont
       });
       this.arreglo_personas = personas;
+      this.limpiar_checkbox.emit(this.mostrar_tabla);
       this.botonestabla(this.posicion_tabla_principal);
     })
     this.comunicacion2.enviar_arreglo_observable_.subscribe(personas =>{
@@ -40,18 +44,18 @@ export class PaginacionComponent implements OnInit{
       if(this.mostrar_tabla == "tabla1")
       {
         this.botonestabla(this.posicion_tabla_principal);
-        console.log("cc22")
       }
       else
       {
-        console.log("cc")
         this.busqueda(this.nombre);
       }
+      this.limpiar_checkbox.emit(this.mostrar_tabla);
     })
     this.comunicacion.enviar_nombre_observable.subscribe(nombre =>{
       this.nombre = nombre;
       console.log("nombre")
       console.log(nombre);
+      this.limpiar_checkbox.emit(this.mostrar_tabla);
       if(nombre.length > 0)
       {
         this.mostrar_tabla = "tabla2"; 
@@ -64,8 +68,12 @@ export class PaginacionComponent implements OnInit{
         this.posicion_tabla_principal = 1;
         this.principio();
         console.log("volver a tabla principal");
+        this.arreglo_busqueda = [];
       }
     })
+    /*this.comunicacion3.enviar_limpiar_observable.subscribe(limpiar =>{
+      //this.limpiar_checkbox.emit(this.mostrar_tabla);
+    })*/
   }
 
   busqueda(nombre: string)
