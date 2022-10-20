@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
+import { PrimerProyectoComponent } from '../primer-proyecto/primer-proyecto.component';
 import { TablasComponent } from '../tablas/tablas.component';
 
 @Component({
@@ -18,7 +19,7 @@ export class PaginacionComponent implements OnInit{
   @Output()
   cerrar_boton: EventEmitter<String> = new EventEmitter<String>();
 
-  constructor(private comunicacion: AppComponent, private comunicacion2: TablasComponent, /*private comunicacion3: ModalMostrarComponent*/) { }
+  constructor(private comunicacion: PrimerProyectoComponent, private comunicacion2: TablasComponent, /*private comunicacion3: ModalMostrarComponent*/) { }
 
   ngOnInit(): void {
     this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{

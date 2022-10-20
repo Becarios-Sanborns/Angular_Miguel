@@ -2,6 +2,7 @@ import { Component, Input} from '@angular/core';
 import { Subject } from 'rxjs';
 import { Persona } from '../altas/altas.component';
 import { AppComponent } from '../app.component';
+import { PrimerProyectoComponent } from '../primer-proyecto/primer-proyecto.component';
 
 @Component({
   selector: 'app-tablas',
@@ -14,7 +15,7 @@ export class TablasComponent{
   parentSelector: boolean = false;
 
   lista = false;
-  constructor(private comunicacion: AppComponent) { }
+  constructor(private comunicacion: PrimerProyectoComponent) { }
 
   ngOnInit(): void {
     this.comunicacion.enviar_arreglo_observable.subscribe(personas =>{

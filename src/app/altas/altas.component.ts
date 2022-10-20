@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter, OnInit} from '@angular/core';
 import { FormControl } from "@angular/forms";
-import { PaginacionComponent } from '../paginacion/paginacion.component';
 
 export interface Persona
 {

@@ -9,7 +9,14 @@ import { ModalMostrarComponent } from './modal-mostrar/modal-mostrar.component';
 import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 import { PaginacionComponent } from './paginacion/paginacion.component';
 import { BuscarComponent } from './buscar/buscar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PrimerProyectoComponent } from './primer-proyecto/primer-proyecto.component';
+import { SegundoProyectoComponent } from './segundo-proyecto/segundo-proyecto.component';
 
+const appRoutes: Routes=[
+  {path:'', component: PrimerProyectoComponent},
+  {path:'Segundo_Proyecto', component: SegundoProyectoComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +26,14 @@ import { BuscarComponent } from './buscar/buscar.component';
     ModalEliminarComponent,
     PaginacionComponent,
     BuscarComponent,
+    PrimerProyectoComponent,
+    SegundoProyectoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
