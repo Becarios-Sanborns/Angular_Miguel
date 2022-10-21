@@ -13,6 +13,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PrimerProyectoComponent } from './primer-proyecto/primer-proyecto.component';
 import { SegundoProyectoComponent } from './segundo-proyecto/segundo-proyecto.component';
 
+import { SegundoService } from './segundo-proyecto/segundo.service';
+import {HttpClientModule} from '@angular/common/http';
 const appRoutes: Routes=[
   {path:'', component: PrimerProyectoComponent},
   {path:'Segundo_Proyecto', component: SegundoProyectoComponent}
@@ -33,9 +35,10 @@ const appRoutes: Routes=[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SegundoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

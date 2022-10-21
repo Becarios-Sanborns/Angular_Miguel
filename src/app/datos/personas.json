@@ -1,0 +1,9 @@
+{
+    "personas": [
+        {"id":1, "name":"Facundo", "genero":"hombre"},
+        {"id":2, "name":"Rita", "genero":"mujer"},
+        {"id":3, "name":"Carlos", "genero":"hombre"},
+        {"id":4, "name":"Caro", "genero":"mujer"},
+        {"id":5, "name":"Silvia", "genero":"hombre"}
+    ]
+}
