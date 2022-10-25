@@ -39,3 +39,8 @@
 #12 Use el ngStyle para mostrar el boton cada vez que se seleccione por lo menos un check que despliega los modales al darle click al boton. Imprimir la lista de usuarios seleccionados en el modal de el componentes modal-mostrar.
 #13 Modificacion del modal para que el labbel X no este encimado del titulo. Pude abrir la ventana modal-eliminar cada vez que se pulsaba el boton X del usuario encontrado en la tabla pero esta se repetia varias veces segun sea el caso.
 #14 Intentar resolver el error del de porque se abren varias ventanas modales de eliminar. En la reunion me dijeron como resolver el error que se encontraba en la tabla del componente y es que ahi se repite varias veces si esta dentro de un ngFor.
+# Semana 7 (17/10/22 - 21/10/2022) 140 horas
+#15 Termino del proyecto en angular para eso termine de hacer la eliminacion despues de dar que si en la ventana modal, impresion de indicadores que muestran el total de usuarios y los usuarios encontrados en la busqueda, mejorar el diseño de las ventanas modañes y limpiar los checkbox cada que se abren las ventanas modales. Reunion para checar avances del proyecto en mi caso se reviso por completo el codigo y la ejecucion.
+#16 Videos de como hacer el appbar como menu, manejo de rutas y un poco del video de formularios.
+#17 Implemente en el codigo de angular el menu appbar con links uno que te lleva al proyecto original terminado y el otro a un componente vacio por el momento.
+#18 Investigacion e implementacion de como leer datos de un JSON. Se lee el JSON en el componente llamado personas y se imprimen los resultados en el html del componente llamado SegundoProyecto.
