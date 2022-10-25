@@ -14,9 +14,10 @@ export class SegundoProyectoComponent implements OnInit {
   personas: any;
 
   ngOnInit(): void {
-    this.SegundoService.getPersonas("http://localhost:3000/personas").subscribe((res: any) =>{
-      console.log("t   " + JSON.stringify(res));
-      this.personas = res;
+    this.SegundoService.getPersonas("assets/personas.json").subscribe((res: any) =>{
+      console.log("c " + JSON.stringify(res));
+      this.personas = res.personas;
+      console.log("c "+ this.personas);
     });
   }
 
