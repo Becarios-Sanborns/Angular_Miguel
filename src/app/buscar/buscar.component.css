@@ -15,14 +15,14 @@ article
     padding: 10px;
     margin-bottom: 15px;
 }
-.controls
-{
-    padding: 5px;
-    font-size: 20px;
-    width: 70%;
-}
 aside i
 {
     margin-top: -15px;
     font-size: 100px;
+}
+input
+{
+    justify-content: center;
+    width: 70%;
+    margin-left: 15%;
 }

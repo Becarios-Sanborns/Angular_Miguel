@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
 })
 
 export class SegundoService{
-    constructor(private http:HttpClient)
+    /*constructor(private http:HttpClient)
     {
 
     }
@@ -15,5 +15,5 @@ export class SegundoService{
     getPersonas(url: string)
     {
         return this.http.get(url);
-    }
+    }*/
 }

@@ -4,6 +4,14 @@ h1
     font-family: sans-serif;
     font-weight: bold;
 }
+.alerta
+{
+    width: 30%;
+    position: fixed;
+    left: 40%;
+    font-size: 20px;
+    margin-top: -15px;
+}
 aside, article
 {
     display: block;
@@ -15,27 +23,18 @@ article
     padding: 10px;
     margin-bottom: 15px;
 }
-.controls
+input
 {
-    padding: 5px;
-    font-size: 20px;
+    justify-content: center;
     width: 70%;
+    margin-left: 15%;
 }
-.controls_2
+button
 {
     font-family: sans-serif;
     font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    background: #1A2849;
     width: 70%;
-    padding: 7px;
     font-size: 20px;
-}
-.controls_2 span
-{
-    margin-left: 10px;
 }
 aside i
 {

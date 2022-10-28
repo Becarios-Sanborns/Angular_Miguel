@@ -1,21 +1,21 @@
 <br><br>
 <aside class="columna">
     <blockquote>
-        <table class="tabla" id="personas" border="2">
+        <table class="table-primary" border="2">
             <tr>
-                <th><input class="check-lista"
+                <th class="container text-center"><input class="check-lista"
                     type="checkbox" 
                     [(ngModel)] = "parentSelector"
                     [value]="-1"
                     (change)="cambio_check($event)"></th>
-                <th>ID</th>
-                <th>NOMBRE(S)</th>
-                <th>APELLIDOS</th>
-                <th>EDAD</th>
-                <th>CORREO</th>
-                <th>BORRAR</th>
+                <th class="container text-center">ID</th>
+                <th class="container text-center">NOMBRE(S)</th>
+                <th class="container text-center">APELLIDOS</th>
+                <th class="container text-center">EDAD</th>
+                <th class="container text-center">CORREO</th>
+                <th class="container text-center">BORRAR</th>
             </tr>
-            <tr *ngFor="let persona of arreglo_5_usuarios">
+            <tr style = "border: 1px solid black;" *ngFor="let persona of arreglo_5_usuarios">
                 <th><input 
                     class="check-lista"
                     type="checkbox" 
@@ -24,17 +24,17 @@
                     [checked]="persona.permitir"
                     (change)="cambio_check($event)">
                 </th>
-                <th class="letra">{{persona.id}}</th>
-                <th class="letra">{{persona.nombre}}</th>
-                <th class="letra">{{persona.apellido}}</th>
-                <th class="letra">{{persona.edad}}</th>
-                <th class="letra">{{persona.correo}}</th>
+                <th>{{persona.id}}</th>
+                <th>{{persona.nombre}}</th>
+                <th>{{persona.apellido}}</th>
+                <th>{{persona.edad}}</th>
+                <th>{{persona.correo}}</th>
                 <th>
                     <button
-                    class="delate"
-                    type="button"  
-                    (click)="borrar(persona)">
-                    X
+                        class="delate"
+                        type="button"  
+                        (click)="borrar(persona)">
+                        X
                     </button>
                 </th>
             </tr>

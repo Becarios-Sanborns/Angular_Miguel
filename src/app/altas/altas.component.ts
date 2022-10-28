@@ -122,7 +122,7 @@ export class AltasComponent implements OnInit{
         }
         else
         {
-          alert("EL CORREO NO ES VALIDO");
+          alert("VERIFICA EL CONTENIDO DE TUS CAMPOS INGRESADOS");
           permitir_guardar = false;
         }
       }

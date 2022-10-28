@@ -2,24 +2,21 @@
     <article>
         <blockquote>
             <h1>Ingresar Usuarios</h1>
+            <br>
             <aside>
                 <i class="fa-solid fa-circle-user"></i>
             </aside>
             <br>
-            <input class="controls" type="text" id="nombre" placeholder="INGRESA TU NOMBRE(S)" [formControl]="padreForm">
+            <input class="form-control form-control-lg" type="text" placeholder="INGRESA TU NOMBRE(S)" aria-label=".form-control-lg example" [formControl]="padreForm">
             <br>
+            <input class="form-control form-control-lg" type="text" placeholder="INGRESA TUS APELLIDOS" aria-label=".form-control-lg example" [formControl]="padreForm2">
             <br>
-            <input class="controls" type="text" id="apellido" placeholder="INGRESA TUS APELLIDOS" [formControl]="padreForm2">
+            <input class="form-control form-control-lg" type="number" placeholder="INGRESA TU EDAD" aria-label=".form-control-lg example" [formControl]="padreForm3">
             <br>
+            <input class="form-control form-control-lg" type="email" placeholder="INGRESA TU CORREO" aria-label=".form-control-lg example" [formControl]="padreForm4">
             <br>
-            <input class="controls" type="number" id="edad" placeholder="INGRESA TU EDAD" [formControl]="padreForm3">
-            <br>
-            <br>
-            <input class="controls" type="email" id="correo" placeholder="INGRESA TU CORREO" [formControl]="padreForm4">
-            <br>
-            <br>
-            <button class="controls_2" type="button" name="Enviar" (click)="guardar()">
-                Guardar<span><i class="fa-solid fa-floppy-disk"></i></span>
+            <button type="button" class="btn btn-info" (click)="guardar()">
+                Guardar <span><i class="fa-solid fa-floppy-disk"></i></span>
             </button>
         </blockquote>
     </article>
