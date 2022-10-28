@@ -44,3 +44,6 @@
 #16 Videos de como hacer el appbar como menu, manejo de rutas y un poco del video de formularios.
 #17 Implemente en el codigo de angular el menu appbar con links uno que te lleva al proyecto original terminado y el otro a un componente vacio por el momento.
 #18 Investigacion e implementacion de como leer datos de un JSON. Se lee el JSON en el componente llamado personas y se imprimen los resultados en el html del componente llamado SegundoProyecto.
+#19 Reunion para checar avances de termino del proyecto, en mi caso como ya habia terminado solo mostre mis avances del navbar y archivos JSON donde se me encargo investigar diferentes formas de lectura de esos archivos y descargar bootstrap. 
+# Semana 8 (24/10/22 - 28/10/2022) 160 horas
+#20 Coloque el archivo JSON en la carpeta assets para leerlo mas facilmente. Se descargo bootstrap y se intento usar sus clases para mejorar el estilo del navbar pero no funciono asi que lo hice en el css.
