@@ -47,3 +47,7 @@
 #19 Reunion para checar avances de termino del proyecto, en mi caso como ya habia terminado solo mostre mis avances del navbar y archivos JSON donde se me encargo investigar diferentes formas de lectura de esos archivos y descargar bootstrap. 
 # Semana 8 (24/10/22 - 28/10/2022) 160 horas
 #20 Coloque el archivo JSON en la carpeta assets para leerlo mas facilmente. Se descargo bootstrap y se intento usar sus clases para mejorar el estilo del navbar pero no funciono asi que lo hice en el css.
+#21 Reunion donde se mostraron los avances donde descubri que boostrap desacomodo el diseño y me encargaron ampliar el tamaño del JSON.
+#22 Se implemento boostrap en el diseño del proyecto pero no al 100% debido aun necesita CSS, se investigo diferentes formas de leer un JSON aparte de la que hice.
+#23 Se cambio el contenido del archivo JSON por uno mas grande, se imprimio en el html y consola. 
+#24 Se organizo la impresion del JSON en una tabla para que facil de entender. Reunion y encargo de tareas como instalacion de diferentes paquetes, Entender y manejar las APIS y el Modelo Cliente-Servidor. 
